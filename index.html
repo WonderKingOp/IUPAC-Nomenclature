@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomenclatur</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style4outBox.css">
+
+</head>
+
+<body>
+    <div class="webDesign">
+        <nav class="border">
+            <span>Nomenclature</span>
+            <!-- <span></span> -->
+        </nav>
+        <section class="border">
+            <form id="form1" onsubmit="return false;">
+                <input class="buttons" type="text" id="userInput">
+                <button type="submit" id="btn" class="buttons" onclick="dataEntered()">Enter</button>
+            </form>
+
+
+            <div class="allInOne" id="papa">
+                <div class="container" id="main">
+                    <div class="box" id="box2"><svg class="line" height="30" width="33">
+                            <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry,
+                            your browser does not support inline SVG.
+                        </svg>
+                        <div class="charArround">H</div>
+                    </div>
+                    <div class="box" id="box1"><svg class="line" height="30" width="25">
+                            <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry,
+                            your browser does not support inline SVG.
+                        </svg><svg id="line-top" class="line" height="30" width="30">
+                            <line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry,
+                            your browser does not support inline SVG.
+                        </svg></div>
+                    <div class="box" id="mid"> H <svg class="line" height="30" width="30">
+                            <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                            Sorry, your browser does not support inline SVG.
+                        </svg>
+                        C <svg class="line" height="30" width="30">
+                            <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                            Sorry, your browser does not support inline SVG.
+                        </svg>
+                        H </div>
+                    <div class="box" id="box-1"><svg class="line" height="30" width="25">
+                            <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry,
+                            your browser does not support inline SVG.
+                        </svg><svg id="line-top" class="line" height="30" width="30">
+                            <line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry,
+                            your browser does not support inline SVG.
+                        </svg></div>
+                    <div class="box" id="box-2"><svg class="line" height="30" width="33">
+                            <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry,
+                            your browser does not support inline SVG.
+                        </svg>
+                        <div class="charArround">H</div>
+                    </div>
+                </div>
+                <div class="outerBln" id="functions">
+                    <div class="fxnOfOic" id="fxn0">
+
+
+                    </div>
+                    <div class="bln" id="blnId"></div>
+
+                </div>
+            </div>
+            <div id="outName"></div>
+            <div class="bg-blur" id="bg-blurID" style="display: none;">
+                <div class="nameForm" id="nameFormID" style="display: none;">
+                    <form class="form-container" onsubmit="return false;">
+                        <h1 class="h1">Please enter your name</h1>
+                        <label for="name"><b>Name :</b></label>
+                        <input type="text" id="userName" placeholder="Enter your name here">
+
+                        <button type="submit" class="btn" onclick="nameIn()">Enter</button>
+                    </form>
+                </div>
+            </div>
+            
+        </section>
+
+        <aside class="border" id="asidee">
+            <div>
+                <div id="userIn"></div>
+                <div id="nOfcarbon"></div>
+                <div id="fxnGrp"></div>
+
+            </div>
+            <div>Fundamental Parameters:</div>
+            <p>This platform has been developed by a 10th-grade student, and as such, the content is currently limited
+                to standard 10th organic chemistry. Additionally, cyclic hydrocarbons have not been incorporated into
+                the content as of now.</p>
+            <p style="text-align: center;font-size: 23px;font-family: fantasy;">"The site evolves regularly, stay
+                tuned."
+            </p>
+
+
+
+    </div>
+    </aside>
+    </div>
+    <footer class="border">
+        <div>
+            Copyright &copy; <a href="https://t.me/wonderking_Op_About">WonderKing</a> 2024
+        </div>
+    </footer>
+    <div class="greet" id="greetID" style="display: block;"></div>
+</body>
+<script src="script.js"></script>
+<script>
+    let alkyl = [];
+    let n;
+    let nOEster;
+    let aneEneYne;
+    let nOfFxn;
+    let nOfAneEneYne = [];
+    let fxnGrp;
+    let ester;
+    let x;
+    let err = false;
+    let lineDownUp = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="75" x2="75" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+    let lineUpDown = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="0" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+
+
+    let userInput = " 2-bromohex-4-ene".toLocaleLowerCase().replaceAll(' ', '');
+    // let userInput = document.getElementById('userInput').value.toLocaleLowerCase().replaceAll(' ', '');
+
+    // dataEntered();
+    function dataEntered() {
+        console.log("");
+        userInput = document.getElementById("userInput").value.toLocaleLowerCase().replaceAll(' ', '');
+        for (let i = 0; i < alkyl.length; i++) {
+            alkyl.splice(0, alkyl.length);
+        }
+        for (let i = 0; i < nOfAneEneYne.length; i++) {
+            nOfAneEneYne.splice(0, nOfAneEneYne.length);
+        }
+        n = null;
+        aneEneYne = null;
+        nOfFxn = null;
+        ester = null;
+        nOEster = null;
+        fxnGrp = null;
+        // delete fxnGrp;
+        err = false;
+        wordToPrnt = null;
+        x = 0;
+        noOfupRow = 0;
+        noOfdownRow = 0;
+        countOfFxn = 0;
+        document.getElementById('outName').innerHTML = userInput;
+        // document.getElementById('userIn').innerHTML = `User Input: ${userInput}`;
+        nameBreak();
+        // createBln();
+    }
+
+
+    // nameBreak();
+    function nameBreak() {
+        //del value
+        n = null;
+        ester = null;
+        nOEster = null;
+        aneEneYne = null;
+        nOfFxn = null;
+        fxnGrp = null;
+        // delete fxnGrp;
+        err = false;
+        wordToPrnt = null;
+        x = 0;
+        noOfupRow = 0;
+        noOfdownRow = 0;
+        countOfFxn = 0;
+
+        //input
+        // let userInput = prompt("enter the IUPAC name of hydrocarbon :").toLocaleLowerCase().replaceAll(' ','');
+        let constUserInput = userInput;
+        console.log("user input : " + userInput)
+        // console.log(userInput.slice(userInput.indexOf('yl') + 2, userInput.length - 3));
+
+        //alkane alkene alkyne
+        if (userInput.slice(userInput.length - 3, userInput.length) == "ane") {
+            aneEneYne = 1;
+        } else if (userInput.slice(userInput.length - 3, userInput.length) == "ene") {
+            aneEneYne = 2;
+        } else if (userInput.slice(userInput.length - 3, userInput.length) == "yne") {
+            aneEneYne = 3;
+        }
+
+        //fxn of ester      3-methylbutylpropanoate         butylpropanoate
+        if (userInput.indexOf('oate') != -1) {
+            if (userInput.lastIndexOf('yl') > 5) {
+                ester = userInput.slice(userInput.lastIndexOf('yl', userInput.lastIndexOf('yl') - 2) + 2, userInput.lastIndexOf('yl') + 2)
+                userInput = userInput.slice(0, userInput.lastIndexOf('yl', userInput.lastIndexOf('yl') - 2) + 2) + userInput.slice(userInput.lastIndexOf('yl') + 2)
+            } else {
+                ester = userInput.slice(0, userInput.lastIndexOf('yl') + 2)
+                userInput = userInput.slice(userInput.lastIndexOf('yl') + 2, userInput.length)
+            }
+        }
+
+        //fxn of halo-alkane
+        if (userInput.indexOf('bromo') != -1) {
+            fxnGrp = 'bromo';
+            if (userInput.charAt(userInput.indexOf('bromo') - 1) == '-') {
+                nOfFxn = userInput.slice(userInput.indexOf('bromo') - 2, userInput.indexOf('bromo') - 1)
+                if (userInput.indexOf('bromo') > 4) {
+                    userInput = userInput.slice(0, userInput.indexOf('bromo') - 3) + userInput.slice(userInput.indexOf('bromo') + 5, userInput.length)
+                } else {
+                    userInput = userInput.slice(userInput.indexOf('bromo') + 5, userInput.length)
+                }
+            }
+        }
+        if (userInput.indexOf('fluro') != -1) {
+            fxnGrp = 'fluro';
+            if (userInput.indexOf('fluro') > 4) {
+                userInput = userInput.slice(0, userInput.indexOf('fluro') - 3) + userInput.slice(userInput.indexOf('fluro') + 5, userInput.length)
+            } else {
+                userInput = userInput.slice(userInput.indexOf('fluro') + 5, userInput.length)
+            }
+        }
+        if (userInput.indexOf('chloro') != -1) {
+            fxnGrp = 'chloro';
+            if (userInput.indexOf('chloro') > 4) {
+                userInput = userInput.slice(0, userInput.indexOf('chloro') - 3) + userInput.slice(userInput.indexOf('chloro') + 5, userInput.length)
+            } else {
+                userInput = userInput.slice(userInput.indexOf('chloro') + 5, userInput.length)
+            }
+        }
+        if (userInput.indexOf('iodo') != -1) {
+            fxnGrp = 'iodo';
+            if (userInput.indexOf('iodo') > 4) {
+                userInput = userInput.slice(0, userInput.indexOf('iodo') - 3) + userInput.slice(userInput.indexOf('iodo') + 4, userInput.length)
+            } else {
+                userInput = userInput.slice(userInput.indexOf('iodo') + 4, userInput.length)
+            }
+        }
+
+        //alkyl
+        for (let i = 1; userInput.indexOf('yl') != -1; i++) {
+            if (userInput.charAt(userInput.indexOf('yl') + 2) == '-') {
+                alkyl.push(userInput.slice(0, userInput.indexOf('yl') + 2));
+                userInput = userInput.slice(userInput.indexOf('yl') + 3, userInput.length);
+            } else {
+                alkyl.push(userInput.slice(0, userInput.indexOf('yl') + 2));
+                userInput = userInput.slice(userInput.indexOf('yl') + 2, userInput.length);
+            }
+        }
+        //ane ene yne position extract                      dec-2,3-yne     2,3-decyne      3-decyne     dec-3-yne
+        for (let i = 0; userInput.indexOf(',') != -1; i++) {
+            if (userInput.indexOf('-') < userInput.indexOf(',') && userInput.indexOf(',') != -1) {
+                nOfAneEneYne.push(userInput.slice(userInput.indexOf('-') + 1, userInput.indexOf(',')));
+                userInput = userInput.slice(0, userInput.indexOf('-') + 1) + userInput.slice(userInput.indexOf(',') + 1, userInput.length);
+            } else if (userInput.indexOf('-') > userInput.indexOf(',') && userInput.indexOf(',') != -1) {
+                nOfAneEneYne.push(userInput.slice(0, userInput.indexOf(',')));
+                userInput = userInput.slice(userInput.indexOf(',') + 1, userInput.length);
+            }
+        }
+        if (userInput.lastIndexOf('-') == userInput.indexOf('-') && userInput.indexOf('-') != -1) {
+            nOfAneEneYne.push(userInput.slice(0, userInput.indexOf('-')));
+            userInput = userInput.slice(userInput.indexOf('-') + 1, userInput.length);
+        }
+        if (userInput.lastIndexOf('-') != userInput.indexOf('-')) {
+
+            nOfAneEneYne.push(userInput.slice(userInput.indexOf('-') + 1, userInput.lastIndexOf('-')));
+            userInput = userInput.slice(0, userInput.indexOf('-')) + userInput.slice(userInput.lastIndexOf('-') + 1, userInput.length);
+
+
+        }
+        if (nOfAneEneYne.length == 0) {
+            nOfAneEneYne.push(1);
+        }
+
+
+        //output
+        for (let i = 0; i < alkyl.length; i++) {
+            console.log("alkyl " + (i + 1) + " : " + alkyl[i]);
+        }
+
+        console.log(userInput)
+
+        //no. of carbons
+        if (userInput.indexOf('meth') != -1) { n = 1 }
+        else if (userInput.indexOf('eth') != -1) { n = 2 }
+        else if (userInput.indexOf('prop') != -1) { n = 3 }
+        else if (userInput.indexOf('but') != -1) { n = 4 }
+        else if (userInput.indexOf('pent') != -1) { n = 5 }
+        else if (userInput.indexOf('hex') != -1) { n = 6 }
+        else if (userInput.indexOf('hept') != -1) { n = 7 }
+        else if (userInput.indexOf('oct') != -1) { n = 8 }
+        else if (userInput.indexOf('non') != -1) { n = 9 }
+        else if (userInput.indexOf('dec') != -1) { n = 10 }
+
+
+        //functional Group
+        {
+            if (userInput.indexOf('iodo') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('iodo'), userInput.indexOf('iodo') + 5);
+            } else if (userInput.indexOf('fluro') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('fluro'), userInput.indexOf('fluro') + 5);
+            } else if (userInput.indexOf('chloro') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('chloro'), userInput.indexOf('chloro') + 5);
+            } else if (userInput.indexOf('bromo') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('bromo'), userInput.indexOf('bromo') + 5);
+            } else if (userInput.indexOf('oicacid') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('oicacid'), userInput.length);
+                if (userInput.slice(userInput.indexOf('oicacid') - 2, userInput.indexOf('oicacid')) == "an") {
+                    aneEneYne = 1;
+                } else if (userInput.slice(userInput.indexOf('oicacid') - 2, userInput.indexOf('oicacid')) == "en") {
+                    aneEneYne = 2;
+                } else if (userInput.slice(userInput.indexOf('oicacid') - 2, userInput.indexOf('oicacid')) == "yn") {
+                    aneEneYne = 3;
+                }
+            } else if (userInput.indexOf('ol') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('ol'), userInput.length);
+                if (userInput.slice(userInput.indexOf('ol') - 2, userInput.indexOf('ol')) == "an") {
+                    aneEneYne = 1;
+                } else if (userInput.slice(userInput.indexOf('ol') - 2, userInput.indexOf('ol')) == "en") {
+                    aneEneYne = 2;
+                } else if (userInput.slice(userInput.indexOf('ol') - 2, userInput.indexOf('ol')) == "yn") {
+                    aneEneYne = 3;
+                }
+            } else if (userInput.indexOf('al') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('al'), userInput.length);
+                if (userInput.slice(userInput.indexOf('al') - 2, userInput.indexOf('al')) == "an") {
+                    aneEneYne = 1;
+                } else if (userInput.slice(userInput.indexOf('al') - 2, userInput.indexOf('al')) == "en") {
+                    aneEneYne = 2;
+                } else if (userInput.slice(userInput.indexOf('al') - 2, userInput.indexOf('al')) == "yn") {
+                    aneEneYne = 3;
+                }
+            } else if (userInput.indexOf('one') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('one'), userInput.length);
+                if (userInput.slice(userInput.indexOf('one') - 2, userInput.indexOf('one')) == "an") {
+                    aneEneYne = 1;
+                } else if (userInput.slice(userInput.indexOf('one') - 2, userInput.indexOf('one')) == "en") {
+                    aneEneYne = 2;
+                } else if (userInput.slice(userInput.indexOf('one') - 2, userInput.indexOf('one')) == "yn") {
+                    aneEneYne = 3;
+                }
+            } else if (userInput.indexOf('oate') != -1) {
+                fxnGrp = userInput.slice(userInput.indexOf('oate'), userInput.length);
+                if (userInput.slice(userInput.indexOf('oate') - 2, userInput.indexOf('oate')) == "an") {
+                    aneEneYne = 1;
+                } else if (userInput.slice(userInput.indexOf('oate') - 2, userInput.indexOf('oate')) == "en") {
+                    aneEneYne = 2;
+                } else if (userInput.slice(userInput.indexOf('oate') - 2, userInput.indexOf('oate')) == "yn") {
+                    aneEneYne = 3;
+                }
+            }
+        }
+
+        //ester declaration
+        if (userInput.indexOf('oate') != -1) {
+            if (ester.indexOf('meth') != -1) { nOEster = 1 }
+            else if (ester.indexOf('eth') != -1) { nOEster = 2 }
+            else if (ester.indexOf('prop') != -1) { nOEster = 3 }
+            else if (ester.indexOf('but') != -1) { nOEster = 4 }
+            else if (ester.indexOf('pent') != -1) { nOEster = 5 }
+            else if (ester.indexOf('hex') != -1) { nOEster = 6 }
+            else if (ester.indexOf('hept') != -1) { nOEster = 7 }
+            else if (ester.indexOf('oct') != -1) { nOEster = 8 }
+            else if (ester.indexOf('non') != -1) { nOEster = 9 }
+            else if (ester.indexOf('dec') != -1) { nOEster = 10 }
+
+            nOfFxn = n
+            n = n + nOEster + 1
+        }
+
+        if (nOfFxn == null) { nOfFxn = 1 }
+        console.log("no of ester : ", nOEster);
+        console.log("no of carbon :", n);
+        console.log("no. of bond", aneEneYne)
+        console.log("no. of ane/ene/yne", nOfAneEneYne)
+        console.log("functional group :", fxnGrp);
+        console.log("no. functional group :", nOfFxn);
+
+
+        // document.getElementById('nOfcarbon').innerHTML = `Number of carbon : ${n}`;
+        // document.getElementById('fxnGrp').innerHTML = `Functional group : ${fxnGrp}`;
+
+
+        //ketone 
+        if (fxnGrp == 'one' && nOfAneEneYne.length == 1) {
+            nOfFxn = nOfAneEneYne[0];
+            delete nOfAneEneYne[0];
+        }
+        //alcohol
+        if (fxnGrp == 'ol' && nOfAneEneYne.length == 1) {
+            nOfFxn = nOfAneEneYne[0];
+            delete nOfAneEneYne[0];
+        }
+        //bromo
+        if (fxnGrp == 'bromo' && nOfAneEneYne.length == 1) {
+            if (aneEneYne == 1) {
+
+            }
+        }
+        createBln();
+    }
+    //Bond line notation   
+    noOfupRow = 0;
+    noOfdownRow = 0;
+    countOfFxn = 0;
+
+    function createBln() {
+        document.getElementById('papa').innerHTML = `<div class="container" id="main">
+            <div class="box" id="box2"></div>
+            <div class="box" id="box1"></div>
+            <div class="box" id="mid"></div>
+            <div class="box" id="box-1"></div>
+            <div class="box" id="box-2"></div>
+        </div>
+        <div class="outerBln" id="functions">
+            <div class="fxnOfOic" id="fxn0">
+
+
+            </div>
+            <div class="bln" id="blnId">
+                <div class="diagonals" id="up10">
+                </div>
+                <div class="diagonals" id="up9">
+                </div>
+                <div class="diagonals" id="up8">
+                </div>
+                <div class="diagonals" id="up7">
+                </div>
+                <div class="diagonals" id="up6">
+                </div>
+                <div class="diagonals" id="up5">
+                </div>
+                <div class="diagonals" id="up4">
+                </div>
+                <div class="diagonals" id="up3">
+                </div>
+                <div class="diagonals" id="up2">
+                </div>
+                <div class="diagonals" id="up1">
+                </div>
+
+                <div class="diagonals" id="middle">
+
+                    <svg class="bondLine" height="75" width="75">
+                        <line x1="0" y1="62" x2="62" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                        <line x1="0" y1="75" x2="75" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                        <line x1="0" y1="88" x2="88" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                    </svg>
+                    <svg class="bondLine" height="75" width="75">
+                        <line x1="0" y1="0" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                    </svg>
+                    <svg class="bondLine" height="75" width="75">
+                        <line x1="0" y1="75" x2="75" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+
+                    </svg>
+                    <svg class="bondLine" height="75" width="75">
+                        <line x1="13" y1="0" x2="88" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                        <line x1="0" y1="0" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                        <line x1="0" y1="13" x2="75" y2="88" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                    </svg>
+                    <svg class="bondLine" height="75" width="75">
+                        <line x1="0" y1="75" x2="75" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                        <line x1="0" y1="88" x2="88" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line>
+                    </svg>
+                </div>
+                <div class="diagonals" id="down1">
+                </div>
+                <div class="diagonals" id="down2">
+                </div>
+                <div class="diagonals" id="down3">
+                </div>
+                <div class="diagonals" id="down4">
+                </div>
+                <div class="diagonals" id="down5">
+                </div>
+                <div class="diagonals" id="down6">
+                </div>
+                <div class="diagonals" id="down7">
+                </div>
+                <div class="diagonals" id="down8">
+                </div>
+                <div class="diagonals" id="down9">
+                </div>
+                <div class="diagonals" id="down10">
+                </div>
+
+            </div>
+
+        </div>`;
+
+        //middle row establishment 
+        createMiddleRow();
+        alkylCreate();
+        createFunctionalGrp();
+
+
+        function createMiddleRow() {
+            insertMiddleboxes();
+            for (let i = 1; i < n; i++) {
+                if (i % 2 == 1) {
+                    document.getElementById(`middle.${i}`).innerHTML = lineDownUp;
+                    if (i == nOfAneEneYne[countOfFxn] && aneEneYne == 3) {
+                        document.getElementById(`middle.${i}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="62" x2="62" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="0" y1="75" x2="75" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="0" y1="88" x2="88" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                        // console.log(countOfFxn)
+                        countOfFxn++;
+                    }
+                    if (i == nOfAneEneYne[countOfFxn] && aneEneYne == 2) {
+                        countOfFxn++;
+                        document.getElementById(`middle.${i}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="75" x2="75" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="0" y1="88" x2="88" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                    }
+                }
+                if (i % 2 == 0) {
+                    document.getElementById(`middle.${i}`).innerHTML = lineUpDown;
+                    if (i == nOfAneEneYne[countOfFxn] && aneEneYne == 3) {
+                        document.getElementById(`middle.${i}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="13" y1="0" x2="88" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="0" y1="0" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="0" y1="13" x2="75" y2="88" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                        countOfFxn++;
+                    }
+                    if (i == nOfAneEneYne[countOfFxn] && aneEneYne == 2) {
+                        document.getElementById(`middle.${i}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="0" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="0" y1="13" x2="75" y2="88" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                        countOfFxn++;
+
+                    }
+                }
+            }
+            if (n <= 2 && aneEneYne == 1 && alkyl.length == 0) {
+                document.getElementById('blnId').innerHTML = '';
+                // let temporary = "ane"
+
+                create(n, "ane", userInput, fxnGrp);
+            }
+            //alkyl
+        }
+
+        function alkylCreate() {
+            //alkyl
+            if (alkyl.length != 0) {
+                for (let i = 0; i < alkyl.length; i++) {
+                    let temp = [];
+                    temp = (alkylBreakDown(alkyl[i]));
+                    console.log(temp);
+
+
+                    //box maker
+                    if (fxnGrp == 'oate') {
+                        if (nOfFxn % 2 == 0) {
+                            temp[0] = Number(temp[0]) + 1;
+                        }
+                    }
+                    for (let j = 0; j < temp.length - 1; j++) {
+                        if (temp[j] % 2 == 0 && noOfupRow < temp[temp.length - 1]) {
+                            let tempCount = temp[temp.length - 1] - noOfupRow;
+                            for (let k = 0; k < tempCount; k++) {
+                                insertUpRow();
+                            }
+                        }
+                        if (temp[j] % 2 == 1 && noOfdownRow < temp[temp.length - 1]) {
+                            let tempCount = temp[temp.length - 1] - noOfdownRow;
+                            for (let k = 0; k < tempCount; k++) {
+                                insertDownRow();
+                            }
+                        }
+                    }
+                    x = 0;
+                    if (fxnGrp == 'oate') {
+                        if (nOfFxn % 2 == 1) {
+                            x = (nOfFxn + 1);
+                            console.log("x : " + x)
+                        } else {
+                            x = (nOfFxn);
+                        }
+                    }
+
+                    //print
+                    if (temp.length < 3) {
+                        if (temp[0] % 2 == 0) {
+                            for (let i = 1; i <= temp[1]; i++) {
+                                if (i == 1) {
+                                    document.getElementById(`up.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="37.5" y1="0" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                } else {
+                                    if (i % 2 == 0) {
+                                        document.getElementById(`up.${i}.${Number(temp[0]) + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="37.5" y1="0" x2="0" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                    }
+                                    if (i % 2 == 1) {
+                                        document.getElementById(`up.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="37.5" y1="0" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+
+                                    }
+                                }
+                            }
+                        }
+                        if (temp[0] % 2 == 1) {
+                            for (let i = 1; i <= temp[1]; i++) {
+                                if (i == 1) {
+                                    document.getElementById(`down.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="37.5" y1="0" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                } else {
+                                    if (i % 2 == 0) {
+                                        document.getElementById(`down.${i}.${Number(temp[0]) + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="0" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                        console.log(i)
+                                    }
+                                    if (i % 2 == 1) {
+                                        document.getElementById(`down.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="75" y1="0" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+
+                                    }
+                                }
+                            }
+                        }
+                    } else { //2 2 3
+                        if (temp[0] == temp[1]) {
+                            if (temp.length == 3) {
+                                for (let i = 1; i <= temp[2]; i++) {
+                                    if (temp[0] % 2 == 0) {
+                                        if (i == 1) {
+                                            document.getElementById(`up.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="0" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="75" y1="0" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                        } else {
+                                            if (i % 2 == 0) {
+                                                document.getElementById(`up.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="70" y1="0" x2="40" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                                document.getElementById(`up.${i}.${Number(temp[0]) + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="5" y1="0" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                            }
+                                            if (i % 2 == 1) {
+                                                document.getElementById(`up.${i}.${temp[0] - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="0" x2="32" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="75" y1="0" x2="42" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+
+                                            }
+                                        }
+                                    }
+                                    if (temp[0] % 2 == 1) {
+                                        if (i == 1) {
+                                            document.getElementById(`down.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="75" x2="37.5" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="75" y1="75" x2="37.5" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                        } else {
+                                            if (i % 2 == 0) {
+                                                document.getElementById(`down.${i}.${Number(temp[0]) - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="70" y1="75" x2="40" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                                document.getElementById(`down.${i}.${Number(temp[0]) + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="38" y1="0" x2="5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                                            }
+                                            if (i % 2 == 1) {
+                                                document.getElementById(`down.${i}.${temp[0] - 1 + Number(x)}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="0" y1="75" x2="32" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line><line x1="75" y1="75" x2="42" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        //2,3,6-trimethylheptane
+                        if (temp[0] != temp[1]) {
+                            let addWord;
+                            if (temp[temp.length - 1] == 1) {
+                                addWord = "meth";
+                            } else if (temp[temp.length - 1] == 2) {
+                                addWord = "eth";
+                            } else if (temp[temp.length - 1] == 3) {
+                                addWord = "prop";
+                            } else if (temp[temp.length - 1] == 4) {
+                                addWord = "but";
+                            } else if (temp[temp.length - 1] == 5) {
+                                addWord = "pent";
+                            } else if (temp[temp.length - 1] == 6) {
+                                addWord = "hex";
+                            } else if (temp[temp.length - 1] == 7) {
+                                addWord = "hept";
+                            } else if (temp[temp.length - 1] == 8) {
+                                addWord = "oct";
+                            } else if (temp[temp.length - 1] == 9) {
+                                addWord = "non";
+                            } else if (temp[temp.length - 1] == 10) { addWord = "dec"; }
+
+                            for (let i = 0; i < temp.length - 1; i++) {
+                                alkyl.push(`${temp[i]}-${addWord}`);
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        function alkylBreakDown(input) {
+            let pos = [];
+            let flag = true;
+            for (let i = 1; input.indexOf(',') != -1; i++) {
+                if (input.indexOf(',') != -1) {
+                    pos.push(input.slice(0, input.indexOf(',')));
+                    input = input.slice(input.indexOf(',') + 1, input.length);
+
+                }
+                if (input.indexOf(',') == -1 && input.indexOf('-') != -1) {
+                    pos.push(input.slice(0, input.indexOf('-')));
+                    input = input.slice(input.indexOf('-') + 1, input.length);
+
+                }
+                flag = false;
+            }
+            if (flag) {
+                pos.push(input.slice(0, input.indexOf('-')));
+                input = input.slice(input.indexOf('-') + 1, input.length);
+
+            }
+
+
+            // let nOfAlkyl;
+            if (input.indexOf('meth') != -1) { pos.push(1) }
+            else if (input.indexOf('eth') != -1) { pos.push(2) }
+            else if (input.indexOf('prop') != -1) { pos.push(3) }
+            else if (input.indexOf('but') != -1) { pos.push(4) }
+            else if (input.indexOf('pent') != -1) { pos.push(5) }
+            else if (input.indexOf('hex') != -1) { pos.push(6) }
+            else if (input.indexOf('hept') != -1) { pos.push(7) }
+            else if (input.indexOf('oct') != -1) { pos.push(8) }
+            else if (input.indexOf('non') != -1) { pos.push(9) }
+            else if (input.indexOf('dec') != -1) { pos.push(10) }
+            return pos;
+        }
+
+        function createFunctionalGrp() {
+            if (fxnGrp == 'oicacid' && n != 1) {
+                let str;
+                if (noOfupRow == 0) {
+                    insertUpRow();
+                }
+                for (let i = 0; i < noOfupRow + 1; i++) {
+                    str = document.getElementById('fxn0').innerHTML;
+                    document.getElementById('fxn0').innerHTML = str + `<svg class="bondLine" height="75" width="75"></svg>`;
+                }
+                document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" id="fxnOicAcid">
+                    <div class="char4fxn" style="margin-top: 0px; margin-left: 0px;">OH</div><svg class="bondLine" height="75" width="75"><line x1="42" y1="45" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+
+                str = document.getElementById('fxn0').innerHTML;
+                document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 37px;top: 36px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 37px;bottom: 48px;"><line x1="34" y1="0" x2="34" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> <line x1="41" y1="0" x2="41" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+            } else { err = true; }
+            if (fxnGrp == 'al' && n != 1) {
+                let str;
+                if (noOfupRow == 0) {
+                    insertUpRow();
+                }
+                for (let i = 0; i < noOfupRow + 1; i++) {
+                    str = document.getElementById('fxn0').innerHTML;
+                    document.getElementById('fxn0').innerHTML = str + `<svg class="bondLine" height="75" width="75"></svg>`;
+                }
+                document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" id="fxnOicAcid">
+                    <div class="char4fxn" style="margin-top: 0px;margin-left: 17px;">H</div><svg class="bondLine" height="75" width="75"><line x1="42" y1="45" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+
+                str = document.getElementById('fxn0').innerHTML;
+                document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 37px;top: 36px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 37px;bottom: 48px;"><line x1="34" y1="0" x2="34" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> <line x1="41" y1="0" x2="41" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+            } else { err = true; }
+            if (fxnGrp == 'one' && n != 1) {
+                console.log(nOfFxn)
+                if (nOfFxn % 2 == 0) {
+                    if (noOfupRow == 0) {
+                        insertUpRow();
+                    }
+                    document.getElementById(`up.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;bottom: 10px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="34" y1="35" x2="34" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line> <line x1="41" y1="35" x2="41" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+                }
+                if (nOfFxn % 2 == 1) {
+                    if (noOfdownRow == 0) {
+                        insertDownRow();
+                    }
+                    document.getElementById(`down.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 0px;top: 36px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="34" y1="0" x2="34" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> <line x1="41" y1="0" x2="41" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+                }
+            } else { err = true; }
+            if (fxnGrp == 'ol' && n != 1) {
+                console.log(nOfFxn)
+                if (nOfFxn == 1) {
+                    if (noOfupRow == 0) {
+                        insertUpRow();
+                    }
+                    for (let i = 0; i < noOfupRow + 1; i++) {
+                        str = document.getElementById('fxn0').innerHTML;
+                        document.getElementById('fxn0').innerHTML = str + `<svg class="bondLine" height="75" width="75"></svg>`;
+                    }
+                    document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" id="fxnOicAcid">
+                    <div class="char4fxn" style="margin-top: 0px; margin-left: 0px;">OH</div><svg class="bondLine" height="75" width="75"><line x1="42" y1="45" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+                } else {
+                    if (nOfFxn % 2 == 0) {
+                        if (noOfupRow == 0) {
+                            insertUpRow();
+                        }
+                        document.getElementById(`up.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;bottom: 10px;">OH</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="35" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
+                    }
+                    if (nOfFxn % 2 == 1) {
+                        if (noOfdownRow == 0) {
+                            insertDownRow();
+                        }
+                        document.getElementById(`down.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 0px;top: 36px;">OH</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="0" x2="37.5" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
+                    }
+                }
+            } else { err = true; }
+            if (fxnGrp == 'oate') {
+                if (nOfFxn % 2 == 0) {
+                    if (noOfupRow == 0) {
+                        insertUpRow();
+                    }
+                    document.getElementById(`up.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;bottom: 10px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="34" y1="35" x2="34" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line> <line x1="41" y1="35" x2="41" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+                    document.getElementById(`middle.${nOfFxn}`).innerHTML = `<div class="char4fxn" style="position: relative;left: 36px;top: 36px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;top: -47px;"><line x1="0" y1="0" x2="50" y2="50" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                    document.getElementById(`middle.${nOfFxn + 1}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="25" y1="50" x2="75" y2="0" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                }
+                if (nOfFxn % 2 == 1) {
+                    if (noOfdownRow == 0) {
+                        insertDownRow();
+                    }
+                    document.getElementById(`down.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 0px;top: 36px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="34" y1="0" x2="34" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> <line x1="41" y1="0" x2="41" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+                    document.getElementById(`middle.${nOfFxn}`).innerHTML = `<div class="char4fxn" style="position: relative;left: 36px;top: -7px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;top: -47px;"><line x1="0" y1="75" x2="50" y2="25" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                    document.getElementById(`middle.${nOfFxn + 1}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="25" y1="25" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
+                    //methyl methanoate       ethyl methanoate
+                    if (n == 3 || n == 4) {
+                        document.getElementById('down.1.0').style.position = 'relative';
+                        document.getElementById('down.1.0').style.left = '-36px';
+                    }
+                }
+            }
+
+            if (fxnGrp == 'bromo') { wordToPrnt = 'Br' }
+            if (fxnGrp == 'fluro') { wordToPrnt = 'F' }
+            if (fxnGrp == 'chloro') { wordToPrnt = 'Cl' }
+            if (fxnGrp == 'iodo') { wordToPrnt = 'I' }
+
+            if (fxnGrp == 'bromo' || fxnGrp == 'fluro' || fxnGrp == 'chloro' || fxnGrp == 'iodo') {
+                if (nOfFxn == 1) {
+                    if (noOfupRow == 0) {
+                        insertUpRow();
+                    }
+                    for (let i = 0; i < noOfupRow + 1; i++) {
+                        str = document.getElementById('fxn0').innerHTML;
+                        document.getElementById('fxn0').innerHTML = str + `<svg class="bondLine" height="75" width="75"></svg>`;
+                    }
+                    document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" id="fxnOicAcid">
+                            <div class="char4fxn" style="margin-top: 0px; margin-left: 0px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75"><line x1="42" y1="45" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+                } else {
+                    if (nOfFxn % 2 == 0) {
+                        if (noOfupRow == 0) {
+                            insertUpRow();
+                        }
+                        document.getElementById(`up.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;bottom: 10px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="35" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
+                    }
+                    if (nOfFxn % 2 == 1) {
+                        if (noOfdownRow == 0) {
+                            insertDownRow();
+                        }
+                        document.getElementById(`down.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 0px;top: 36px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="0" x2="37.5" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
+                    }
+                }
+
+            }
+        }
+
+        function create(n, hCarbon, mainStr, fxnGrp) {
+            if (hCarbon == "ane") {
+
+                // let hydrogens = Number(n) * 2 + 2;
+                document.getElementById('main').innerHTML = `
+            <div class="box" id="box2"></div>
+            <div class="box" id="box1"></div>
+            <div class="box" id="mid"></div>
+            <div class="box" id="box-1"></div>
+            <div class="box" id="box-2"></div>`;
+
+
+                //mid
+                for (let i = 1; i <= (n + 2); i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + " H ";
+                    } else if (i == (n + 2)) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+            </svg> 
+            H `;
+                    } else {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C `;
+                    }
+
+                }
+                //box-1
+                for (let i = 1; i <= n; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box-1').innerHTML;
+                        document.getElementById('box-1').innerHTML = str + `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    } else {
+                        let str = document.getElementById('box-1').innerHTML;
+                        document.getElementById('box-1').innerHTML = str + `<svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    }
+                }
+                //box1
+                for (let i = 1; i <= n; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box1').innerHTML;
+                        document.getElementById('box1').innerHTML = str + `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    } else {
+                        let str = document.getElementById('box1').innerHTML;
+                        document.getElementById('box1').innerHTML = str + `<svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    }
+                }
+                //box-2
+                for (let i = 1; i <= n; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box-2').innerHTML;
+                        document.getElementById('box-2').innerHTML = str + `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`
+                    } else {
+                        let str = document.getElementById('box-2').innerHTML;
+                        document.getElementById('box-2').innerHTML = str + `<div class="charArround">H</div>`
+                    }
+                }
+                //box2
+                for (let i = 1; i <= n; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box2').innerHTML;
+                        document.getElementById('box2').innerHTML = str + `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`
+                    } else {
+                        let str = document.getElementById('box2').innerHTML;
+                        document.getElementById('box2').innerHTML = str + `<div class="charArround">H</div>`
+                    }
+                }
+            } else if (hCarbon == "ene" && n != 1) {
+                document.getElementById('main').innerHTML = `
+            <div class="box" id="box2"></div>
+            <div class="box" id="box1"></div>
+            <div class="box" id="mid"></div>
+            <div class="box" id="box-1"></div>
+            <div class="box" id="box-2"></div>`;
+
+
+                //mid
+                for (let i = 1; i <= (n + 2); i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + " H ";
+                    } else if (i == (n + 2)) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg> H `;
+                    } else if (i == (n + 1)) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30"><line x1="0" y1="10" x2="30" y2="10" style="stroke:rgb(0,0,0);stroke-width:3"></line><line x1="0" y1="20" x2="30" y2="20" style="stroke:rgb(0,0,0);stroke-width:3"></line></svg> C `;
+                    } else {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg> C `;
+                    }
+                }
+                //box-1
+                for (let i = 1; i <= n - 2; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box-1').innerHTML;
+                        document.getElementById('box-1').innerHTML = str + `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    } else {
+                        let str = document.getElementById('box-1').innerHTML;
+                        document.getElementById('box-1').innerHTML = str + `<svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    }
+                }
+                //box1
+                for (let i = 1; i <= n; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box1').innerHTML;
+                        document.getElementById('box1').innerHTML = str + `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    } else {
+                        let str = document.getElementById('box1').innerHTML;
+                        document.getElementById('box1').innerHTML = str + `<svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    }
+                }
+                //box-2
+                for (let i = 1; i <= n - 2; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box-2').innerHTML;
+                        document.getElementById('box-2').innerHTML = str + `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`
+                    } else {
+                        let str = document.getElementById('box-2').innerHTML;
+                        document.getElementById('box-2').innerHTML = str + `<div class="charArround">H</div>`
+                    }
+                }
+                //box2
+                for (let i = 1; i <= n; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box2').innerHTML;
+                        document.getElementById('box2').innerHTML = str + `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`
+                    } else {
+                        let str = document.getElementById('box2').innerHTML;
+                        document.getElementById('box2').innerHTML = str + `<div class="charArround">H</div>`
+                    }
+                }
+            } else if (hCarbon == "yne" && n != 1) {
+                document.getElementById('main').innerHTML = `
+            <div class="box" id="box2"></div>
+            <div class="box" id="box1"></div>
+            <div class="box" id="mid"></div>
+            <div class="box" id="box-1"></div>
+            <div class="box" id="box-2"></div>`;
+
+
+                //mid
+                for (let i = 1; i <= (n + 2); i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + " H ";
+                    } else if (i == (n + 2)) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg> H `;
+                    } else if (i == (n + 1)) {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30"><line x1="0" y1="8" x2="30" y2="8" style="stroke:rgb(0,0,0);stroke-width:3"></line><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line><line x1="0" y1="22" x2="30" y2="22" style="stroke:rgb(0,0,0);stroke-width:3"></line></svg> C `;
+                    } else {
+                        let str = document.getElementById('mid').innerHTML;
+                        document.getElementById('mid').innerHTML = str + `<svg class="line" height="30" width="30"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg> C `;
+                    }
+                }
+                //box-1
+                for (let i = 1; i <= n - 2; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box-1').innerHTML;
+                        document.getElementById('box-1').innerHTML = str + `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    } else {
+                        let str = document.getElementById('box-1').innerHTML;
+                        document.getElementById('box-1').innerHTML = str + `<svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    }
+                }
+                //box1
+                for (let i = 1; i <= n - 2; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box1').innerHTML;
+                        document.getElementById('box1').innerHTML = str + `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    } else {
+                        let str = document.getElementById('box1').innerHTML;
+                        document.getElementById('box1').innerHTML = str + `<svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`
+                    }
+                }
+                //box-2
+                for (let i = 1; i <= n - 2; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box-2').innerHTML;
+                        document.getElementById('box-2').innerHTML = str + `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`
+                    } else {
+                        let str = document.getElementById('box-2').innerHTML;
+                        document.getElementById('box-2').innerHTML = str + `<div class="charArround">H</div>`
+                    }
+                }
+                //box2
+                for (let i = 1; i <= n - 2; i++) {
+                    if (i == 1) {
+                        let str = document.getElementById('box2').innerHTML;
+                        document.getElementById('box2').innerHTML = str + `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`
+                    } else {
+                        let str = document.getElementById('box2').innerHTML;
+                        document.getElementById('box2').innerHTML = str + `<div class="charArround">H</div>`
+                    }
+                }
+            } else {
+
+                document.getElementById('main').innerHTML = `plz enter correct IUPAC name...
+            <div class="box" id="box2"></div>
+            <div class="box" id="box1"></div>
+            <div class="box" id="mid"></div>
+            <div class="box" id="box-1"></div>
+            <div class="box" id="box-2"></div>`;
+            }
+            if (userInput == 'methanal') {
+                document.getElementById('box-1').innerHTML = ``;
+                document.getElementById('box-2').innerHTML = ``;
+                document.getElementById('box1').innerHTML = `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="12" y1="0" x2="12" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line><line x1="18" y1="0" x2="18" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                    Sorry, your browser does not support inline SVG.</svg>`;
+                document.getElementById('box2').innerHTML = `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">O</div>`;
+            }
+            if (userInput == 'methanoicacid') {
+                console.log(12345678)
+                document.getElementById('box-1').innerHTML = ``;
+                document.getElementById('box-2').innerHTML = ``;
+                document.getElementById('box1').innerHTML = `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="12" y1="0" x2="12" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line><line x1="18" y1="0" x2="18" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                    Sorry, your browser does not support inline SVG.</svg>`;
+                document.getElementById('box2').innerHTML = `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">O</div>`;
+                document.getElementById('mid').innerHTML = ` H <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+            </svg> 
+           OH `;
+            }
+            if (userInput == 'ethanal') {
+                document.getElementById('box1').innerHTML = `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="12" y1="0" x2="12" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line><line x1="18" y1="0" x2="18" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                    Sorry, your browser does not support inline SVG.</svg>`;
+                document.getElementById('box2').innerHTML = `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div><div class="charArround">O</div>`;
+                document.getElementById('box-1').innerHTML = `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`;
+                document.getElementById('box-2').innerHTML = `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`;
+
+            }
+            if (userInput == 'ethanoicacid') {
+                document.getElementById('box1').innerHTML = `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="12" y1="0" x2="12" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line><line x1="18" y1="0" x2="18" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                    Sorry, your browser does not support inline SVG.</svg>`;
+                document.getElementById('box2').innerHTML = `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div><div class="charArround">O</div>`;
+                document.getElementById('box-1').innerHTML = `<svg class="line" height="30" width="25"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><svg id="line-top" class="line" height="30" width="30"><line x1="15" y1="0" x2="15" y2="30" style="stroke:rgb(0,0,0);stroke-width:3"></line>Sorry, your browser does not support inline SVG.</svg>`;
+                document.getElementById('box-2').innerHTML = `<svg class="line" height="30" width="33"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:0"></line>Sorry, your browser does not support inline SVG.</svg><div class="charArround">H</div>`;
+                document.getElementById('mid').innerHTML = ` H <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+            </svg> 
+           OH `;
+
+            }
+            if (userInput == 'methanol') {
+                document.getElementById('mid').innerHTML = ` H <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+            </svg> 
+           OH `;
+            }
+            if (userInput == 'ethanol') {
+                document.getElementById('mid').innerHTML = ` H <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+            </svg> 
+           OH `;
+            }
+            if (fxnGrp == 'one') {
+                document.getElementById('main').innerHTML = ``;
+                document.getElementById('functions').innerHTML = ``;
+            }
+
+            if (fxnGrp == 'bromo') { wordToPrnt = 'Br' }
+            if (fxnGrp == 'fluro') { wordToPrnt = 'F' }
+            if (fxnGrp == 'chloro') { wordToPrnt = 'Cl' }
+            if (fxnGrp == 'iodo') { wordToPrnt = 'I' }
+
+            if (fxnGrp == 'bromo' || fxnGrp == 'fluro' || fxnGrp == 'chloro' || fxnGrp == 'iodo') {
+                if (n == 1) {
+                    document.getElementById('mid').innerHTML = ` H <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+            </svg> 
+           ${wordToPrnt} `;
+                } else if (n == 2) {
+                    document.getElementById('mid').innerHTML = ` H <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+                </svg>
+                C <svg class="line" height="30" width="30">
+                <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:3"></line>
+                Sorry, your browser does not support inline SVG.
+            </svg> 
+            ${wordToPrnt} `;
+                }
+            }
+        }
+        function insertMiddleboxes() {
+            document.getElementById('middle').innerHTML = '';
+            for (let i = 1; i <= n; i++) {
+                let str = document.getElementById(`middle`).innerHTML;
+                document.getElementById(`middle`).innerHTML = str + `<div class="diagonalBox" id="middle.${i}"></div>`;
+
+            }
+        }
+        function insertUpRow() {
+            for (let i = 1; i <= n; i++) {
+                if (noOfupRow % 2 == 0 || noOfupRow == 0) {
+                    if (i == 1) {
+                        let str = document.getElementById(`up${noOfupRow + 1}`).innerHTML;
+                        document.getElementById(`up${noOfupRow + 1}`).innerHTML = str + `<div class="halfBox" id="up.${noOfupRow + 1}.${0}"></div>`;
+                    } else {
+                        let str = document.getElementById(`up${noOfupRow + 1}`).innerHTML;
+                        document.getElementById(`up${noOfupRow + 1}`).innerHTML = str + `<div class="diagonalBox" id="up.${noOfupRow + 1}.${i - 1}"></div>`;
+                    }
+                } else {
+                    let str = document.getElementById(`up${noOfupRow + 1}`).innerHTML;
+                    document.getElementById(`up${noOfupRow + 1}`).innerHTML = str + `<div class="diagonalBox" id="up.${noOfupRow + 1}.${i}"></div>`;
+                }
+            }
+            noOfupRow++;
+        }
+        function insertDownRow() {
+            for (let i = 1; i <= n; i++) {
+                if (noOfdownRow % 2 == 0 || noOfdownRow == 0) {
+                    if (i == 1) {
+                        let str = document.getElementById(`down${noOfdownRow + 1}`).innerHTML;
+                        document.getElementById(`down${noOfdownRow + 1}`).innerHTML = str + `<div class="halfBox" id="down.${noOfdownRow + 1}.${0}"></div>`;
+                    } else {
+                        let str = document.getElementById(`down${noOfdownRow + 1}`).innerHTML;
+                        document.getElementById(`down${noOfdownRow + 1}`).innerHTML = str + `<div class="diagonalBox" id="down.${noOfdownRow + 1}.${i - 1}"></div>`;
+                    }
+                } else {
+                    let str = document.getElementById(`down${noOfdownRow + 1}`).innerHTML;
+                    document.getElementById(`down${noOfdownRow + 1}`).innerHTML = str + `<div class="diagonalBox" id="down.${noOfdownRow + 1}.${i}"></div>`;
+                }
+            }
+            noOfdownRow++;
+        }
+    }
+
+
+</script>
+
+</html>
