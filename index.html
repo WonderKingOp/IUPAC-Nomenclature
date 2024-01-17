@@ -178,6 +178,7 @@
 
         //input
         // let userInput = prompt("enter the IUPAC name of hydrocarbon :").toLocaleLowerCase().replaceAll(' ','');
+        console.log("");
         let constUserInput = userInput;
         console.log("user input : " + userInput)
         // console.log(userInput.slice(userInput.indexOf('yl') + 2, userInput.length - 3));
@@ -205,37 +206,105 @@
         //fxn of halo-alkane
         if (userInput.indexOf('bromo') != -1) {
             fxnGrp = 'bromo';
-            if (userInput.charAt(userInput.indexOf('bromo') - 1) == '-') {
-                nOfFxn = userInput.slice(userInput.indexOf('bromo') - 2, userInput.indexOf('bromo') - 1)
-                if (userInput.indexOf('bromo') > 4) {
-                    userInput = userInput.slice(0, userInput.indexOf('bromo') - 3) + userInput.slice(userInput.indexOf('bromo') + 5, userInput.length)
+            // 1,2-dibromohexane      2-bromohex-2-ane    2-bromohexane     4-methyl-1,2-dibromohexane
+            let temp;
+            if (userInput.indexOf('-', 0, userInput.indexOf('bromo')) == userInput.lastIndexOf('-', userInput.indexOf('bromo'))) {
+                temp = userInput.slice(0, userInput.indexOf('bromo'));
+            } else {
+                temp = userInput.slice(userInput.indexOf('bromo') - 5, userInput.indexOf('bromo') - 2);
+            }
+            // console.log("temp", temp)
+            if (temp.indexOf('-') != -1) {
+                if (userInput.indexOf('-', 0, userInput.indexOf('bromo')) == userInput.lastIndexOf('-', userInput.indexOf('bromo'))) {
+                    nOfFxn = userInput.slice(0, userInput.indexOf('-'));
+                    if (userInput.charAt(userInput.indexOf('bromo') + 5) == '-') {
+                        userInput = userInput.slice(userInput.indexOf('bromo') + 6, userInput.length)
+                    } else {
+                        userInput = userInput.slice(userInput.indexOf('bromo') + 5, userInput.length)
+                    }
                 } else {
-                    userInput = userInput.slice(userInput.indexOf('bromo') + 5, userInput.length)
+                    nOfFxn = userInput.slice(userInput.indexOf('-', userInput.indexOf('bromo') - 9) + 1, userInput.lastIndexOf('-', userInput.indexOf('bromo')))
+                    userInput = userInput.slice(0, userInput.indexOf('-', userInput.indexOf('bromo') - 9)) + userInput.slice(userInput.indexOf('bromo') + 5, userInput.length);
                 }
             }
+
+            // if (userInput.charAt(userInput.indexOf('bromo') - 1) == '-') {
+            //     nOfFxn = userInput.slice(userInput.indexOf('bromo') - 2, userInput.indexOf('bromo') - 1)
+            //     if (userInput.indexOf('bromo') > 4) {
+            //         userInput = userInput.slice(0, userInput.indexOf('bromo') - 3) + userInput.slice(userInput.indexOf('bromo') + 5, userInput.length)
+            //     } else {
+            //         userInput = userInput.slice(userInput.indexOf('bromo') + 5, userInput.length)
+            //     }
+            //     console.log(234567, " " + userInput)
+            // }
         }
         if (userInput.indexOf('fluro') != -1) {
             fxnGrp = 'fluro';
-            if (userInput.indexOf('fluro') > 4) {
-                userInput = userInput.slice(0, userInput.indexOf('fluro') - 3) + userInput.slice(userInput.indexOf('fluro') + 5, userInput.length)
+            let temp;
+            if (userInput.indexOf('-', 0, userInput.indexOf('fluro')) == userInput.lastIndexOf('-', userInput.indexOf('fluro'))) {
+                temp = userInput.slice(0, userInput.indexOf('fluro'));
             } else {
-                userInput = userInput.slice(userInput.indexOf('fluro') + 5, userInput.length)
+                temp = userInput.slice(userInput.indexOf('fluro') - 5, userInput.indexOf('fluro') - 2);
+            }
+            // console.log("temp", temp)
+            if (temp.indexOf('-') != -1) {
+                if (userInput.indexOf('-', 0, userInput.indexOf('fluro')) == userInput.lastIndexOf('-', userInput.indexOf('fluro'))) {
+                    nOfFxn = userInput.slice(0, userInput.indexOf('-'));
+                    if (userInput.charAt(userInput.indexOf('fluro') + 5) == '-') {
+                        userInput = userInput.slice(userInput.indexOf('fluro') + 6, userInput.length)
+                    } else {
+                        userInput = userInput.slice(userInput.indexOf('fluro') + 5, userInput.length)
+                    }
+                } else {
+                    nOfFxn = userInput.slice(userInput.indexOf('-', userInput.indexOf('fluro') - 9) + 1, userInput.lastIndexOf('-', userInput.indexOf('fluro')))
+                    userInput = userInput.slice(0, userInput.indexOf('-', userInput.indexOf('fluro') - 9)) + userInput.slice(userInput.indexOf('fluro') + 5, userInput.length);
+                }
             }
         }
         if (userInput.indexOf('chloro') != -1) {
             fxnGrp = 'chloro';
-            if (userInput.indexOf('chloro') > 4) {
-                userInput = userInput.slice(0, userInput.indexOf('chloro') - 3) + userInput.slice(userInput.indexOf('chloro') + 5, userInput.length)
+            let temp;
+            if (userInput.indexOf('-', 0, userInput.indexOf('chloro')) == userInput.lastIndexOf('-', userInput.indexOf('chloro'))) {
+                temp = userInput.slice(0, userInput.indexOf('chloro'));
             } else {
-                userInput = userInput.slice(userInput.indexOf('chloro') + 5, userInput.length)
+                temp = userInput.slice(userInput.indexOf('chloro') - 5, userInput.indexOf('chloro') - 2);
+            }
+            // console.log("temp", temp)
+            if (temp.indexOf('-') != -1) {
+                if (userInput.indexOf('-', 0, userInput.indexOf('chloro')) == userInput.lastIndexOf('-', userInput.indexOf('chloro'))) {
+                    nOfFxn = userInput.slice(0, userInput.indexOf('-'));
+                    if (userInput.charAt(userInput.indexOf('chloro') + 6) == '-') {
+                        userInput = userInput.slice(userInput.indexOf('chloro') + 7, userInput.length)
+                    } else {
+                        userInput = userInput.slice(userInput.indexOf('chloro') + 6, userInput.length)
+                    }
+                } else {
+                    nOfFxn = userInput.slice(userInput.indexOf('-', userInput.indexOf('chloro') - 9) + 1, userInput.lastIndexOf('-', userInput.indexOf('chloro')))
+                    userInput = userInput.slice(0, userInput.indexOf('-', userInput.indexOf('chloro') - 9)) + userInput.slice(userInput.indexOf('chloro') + 6, userInput.length);
+                }
             }
         }
         if (userInput.indexOf('iodo') != -1) {
             fxnGrp = 'iodo';
-            if (userInput.indexOf('iodo') > 4) {
-                userInput = userInput.slice(0, userInput.indexOf('iodo') - 3) + userInput.slice(userInput.indexOf('iodo') + 4, userInput.length)
+            let temp;
+            if (userInput.indexOf('-', 0, userInput.indexOf('iodo')) == userInput.lastIndexOf('-', userInput.indexOf('iodo'))) {
+                temp = userInput.slice(0, userInput.indexOf('iodo'));
             } else {
-                userInput = userInput.slice(userInput.indexOf('iodo') + 4, userInput.length)
+                temp = userInput.slice(userInput.indexOf('iodo') - 5, userInput.indexOf('iodo') - 2);
+            }
+            // console.log("temp", temp)
+            if (temp.indexOf('-') != -1) {
+                if (userInput.indexOf('-', 0, userInput.indexOf('iodo')) == userInput.lastIndexOf('-', userInput.indexOf('iodo'))) {
+                    nOfFxn = userInput.slice(0, userInput.indexOf('-'));
+                    if (userInput.charAt(userInput.indexOf('iodo') + 4) == '-') {
+                        userInput = userInput.slice(userInput.indexOf('iodo') + 5, userInput.length)
+                    } else {
+                        userInput = userInput.slice(userInput.indexOf('iodo') + 4, userInput.length)
+                    }
+                } else {
+                    nOfFxn = userInput.slice(userInput.indexOf('-', userInput.indexOf('iodo') - 9) + 1, userInput.lastIndexOf('-', userInput.indexOf('iodo')))
+                    userInput = userInput.slice(0, userInput.indexOf('-', userInput.indexOf('iodo') - 9)) + userInput.slice(userInput.indexOf('iodo') + 4, userInput.length);
+                }
             }
         }
 
@@ -280,7 +349,7 @@
             console.log("alkyl " + (i + 1) + " : " + alkyl[i]);
         }
 
-        console.log("user Input :"+userInput)
+        console.log("user Input :" + userInput)
 
         //no. of carbons
         if (userInput.indexOf('meth') != -1) { n = 1 }
@@ -369,15 +438,15 @@
             nOfFxn = n
             n = n + nOEster + 1
         }
-        
+
         if (nOfFxn == null) { nOfFxn = 1 }
-        
-        
+
+
         //ketone 
         if (fxnGrp == 'one' && nOfAneEneYne.length == 1) {
             nOfFxn = nOfAneEneYne[0];
             delete nOfAneEneYne[0];
-            if(nOfFxn == 1) {
+            if (nOfFxn == 1) {
                 nOfFxn = 2;
             }
         }
@@ -804,7 +873,7 @@
                     document.getElementById(`middle.${nOfFxn}`).innerHTML = `<div class="char4fxn" style="position: relative;left: 36px;top: -7px;">O</div><svg class="bondLine" height="75" width="75" style="position: relative;top: -47px;"><line x1="0" y1="75" x2="50" y2="25" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
                     document.getElementById(`middle.${nOfFxn + 1}`).innerHTML = `<svg class="bondLine" height="75" width="75"><line x1="25" y1="25" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg>`;
                     //methyl methanoate       ethyl methanoate
-                    if(n == 3 || n == 4 ) {
+                    if (n == 3 || n == 4) {
                         document.getElementById('down.1.0').style.position = 'relative';
                         document.getElementById('down.1.0').style.left = '-36px';
                     }
@@ -817,30 +886,37 @@
             if (fxnGrp == 'iodo') { wordToPrnt = 'I' }
 
             if (fxnGrp == 'bromo' || fxnGrp == 'fluro' || fxnGrp == 'chloro' || fxnGrp == 'iodo') {
-                if (nOfFxn == 1) {
-                    if (noOfupRow == 0) {
-                        insertUpRow();
-                    }
-                    for (let i = 0; i < noOfupRow + 1; i++) {
-                        str = document.getElementById('fxn0').innerHTML;
-                        document.getElementById('fxn0').innerHTML = str + `<svg class="bondLine" height="75" width="75"></svg>`;
-                    }
-                    document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" id="fxnOicAcid">
-                            <div class="char4fxn" style="margin-top: 0px; margin-left: 0px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75"><line x1="42" y1="45" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
-                } else {
-                    if (nOfFxn % 2 == 0) {
-                        if (noOfupRow == 0) {
-                            insertUpRow();
+                for(let i=0; i<nOfFxn.length; i++) {
+                    if(nOfFxn.charAt(i) == ',') {
+                    } else {
+                        if (nOfFxn.charAt(i) == 1) {
+                            if (noOfupRow == 0) {
+                                insertUpRow();
+                            }
+                            for (let i = 0; i < noOfupRow + 1; i++) {
+                                str = document.getElementById('fxn0').innerHTML;
+                                document.getElementById('fxn0').innerHTML = str + `<svg class="bondLine" height="75" width="75"></svg>`;
+                            }
+                            document.getElementById('fxn0').innerHTML = str + `<div class="diagonalBox" id="fxnOicAcid">
+                                    <div class="char4fxn" style="margin-top: 0px; margin-left: 0px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75"><line x1="42" y1="45" x2="75" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line></svg></div>`;
+                        } else {
+                            if (nOfFxn.charAt(i) % 2 == 0) {
+                                if (noOfupRow == 0) {
+                                    insertUpRow();
+                                }
+                                document.getElementById(`up.1.${nOfFxn.charAt(i) - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;bottom: 10px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="35" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
+                            }
+                            if (nOfFxn.charAt(i) % 2 == 1) {
+                                if (noOfdownRow == 0) {
+                                    insertDownRow();
+                                }
+                                document.getElementById(`down.1.${nOfFxn.charAt(i) - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 0px;top: 36px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="0" x2="37.5" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
+                            }
                         }
-                        document.getElementById(`up.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;bottom: 10px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="35" x2="37.5" y2="75" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
-                    }
-                    if (nOfFxn % 2 == 1) {
-                        if (noOfdownRow == 0) {
-                            insertDownRow();
-                        }
-                        document.getElementById(`down.1.${nOfFxn - 1}`).innerHTML = `<div class="diagonalBox" style="position: relative; "><div class="char4fxn" style="position: relative;left: 0px;top: 36px;">${wordToPrnt}</div><svg class="bondLine" height="75" width="75" style="position: relative;left: 0px;bottom: 48px;"><line x1="37.5" y1="0" x2="37.5" y2="45" style="stroke:rgb(0,0,0);stroke-width:4"></line> </svg></div>`;
+
                     }
                 }
+                
 
             }
         }
